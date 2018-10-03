@@ -1,0 +1,16 @@
+@import "custom";
+@import "~bootstrap/scss/bootstrap";
+
+#randomInt {
+  background-color: $primary;
+  border: 1px solid black;
+  color: white;
+  padding: 5px;
+}
+
+#randomRange {
+  background-color: $danger;
+  border: 1px solid black;
+  color: white;
+  padding: 5px;
+}

@@ -32,8 +32,19 @@ module.exports = {
             }
           },
           'css-loader',
-          'sass-loader',
-        ],
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: function () {
+                return [
+                  require('precss'),
+                  require('autoprefixer')
+                ];
+              }
+            }
+          }, 
+          'sass-loader'
+        ]
       }
     ]
   },
