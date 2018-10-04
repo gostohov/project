@@ -3,21 +3,35 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hello, world!</title>
+    <title>Рецепты</title>
   </head>
   <body>
     <nav class="navbar navbar-light bg-light">
-      <a class="navbar-brand">Рецептики</a>
+      <a class="navbar-brand">Рецепты</a>
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Поиск" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Найти рецепт</button>
+        <input class="form-control mr-sm-2 search_field" type="search" placeholder="Поиск" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0 search" type="submit">Найти рецепт</button>
       </form>
     </nav>
     <div class="container">
       <div class="row">
-        <div class="col-3 border mt-3">Search result</div>
-        <div class="col-6 border mt-3">Recipes</div>
-        <div class="col-3 border mt-3">List</div>
+        <div class="col-sm-12 col-md-3 mt-3">
+          <div class="text-center">
+            Результат запроса
+          </div>          
+          <ul class="list-group">
+          </ul>
+        </div>
+        <div class="col-md-6 mt-3 d-none d-md-block">
+          <div class="text-center">
+              Рецепт
+          </div>
+        </div>
+        <div class="col-md-3 mt-3 d-none d-md-block">
+          <div class="text-center">
+              Лайк
+          </div>
+        </div>
       </div>
     </div>
   </body>

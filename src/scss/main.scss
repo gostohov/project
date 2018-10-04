@@ -1,2 +1,15 @@
-@import "custom";
 @import "~bootstrap/scss/bootstrap";
+@import "custom";
+
+p {
+  margin-top: 0;
+  margin-bottom: 0rem;
+}
+
+h4 {
+  margin-bottom: 0rem;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.2;
+  color: inherit;
+}

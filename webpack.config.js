@@ -4,7 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: [
+    'babel-polyfill',
+    './src/js/index.js'
+  ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
