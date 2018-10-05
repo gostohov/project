@@ -9,7 +9,7 @@ const renderRecipe = recipe => {
   const markup = `
     <li class="list-group-item list-group-item-action mb-3">
       <a href="#${recipe.recipe_id}">
-        <figure class="image-cropper">
+        <figure>
           <img src="${recipe.image_url}" alt="Test">
         </figure>
         <div>
