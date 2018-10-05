@@ -6,34 +6,38 @@
     <title>Рецепты</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <!-- <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand">Рецепты</a>
       <form class="form-inline">
         <input class="form-control mr-sm-2 search_field" type="search" placeholder="Поиск" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0 search" type="submit">Найти рецепт</button>
       </form>
-    </nav>
+    </nav> -->
     <div class="container">
+      <div class="row mt-5">
+        <div class="col">
+            <div class="input-group">
+                <div class="input-group-prepend"></div>
+                <input class="form-control autocomplete rounded-left search_field" type="search" placeholder="Find you recipe"  aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-warning search" type="submit">
+                    <i class="fa fa-search"></i>
+                  </button>
+                </div>
+            </div>
+        </div>
+    </div>
       <div class="row">
-        <div class="col-md-3 mt-3">
-          <div class="text-center">
-            Результат запроса
-          </div>          
+        <div class="col mt-3">          
           <ul class="list-group">
             <!-- <li class="list-group-item list-group-item-action mb-3">
-              <a class="results__link " href="#23456">
-                <figure class="image-cropper">
-                  <img src="/src/img/2.jpg" alt="Test">
-                </figure>
-                <div>
-                  <h4>Pasta with Tomato ...</h4>
-                  <p>The Pioneer Woman</p>
-                </div>
-              </a>
+                <img class="shadow"src="/src/img/2.jpg" alt="Test">
+                <h4>Pasta with Tomato ...</h4>
+                <p>The Pioneer Woman</p>
             </li> -->
           </ul>
         </div>
-        <div class="col-md-6 mt-3 d-none d-md-block">
+        <!-- <div class="col-md-6 mt-3 d-none d-md-block">
           <div class="text-center">
               Рецепт
           </div>
@@ -41,7 +45,7 @@
         <div class="col-md-3 mt-3 d-none d-md-block">
           <div class="text-center">
               Лайк
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

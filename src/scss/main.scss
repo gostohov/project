@@ -1,17 +1,23 @@
 @import "~bootstrap/scss/bootstrap";
 @import "custom";
 
-p {
-  margin-top: 0;
-  margin-bottom: 0rem;
+$fa-font-path: '~@fortawesome/fontawesome-free/webfonts'; 
+@import '~@fortawesome/fontawesome-free/scss/fontawesome'; 
+@import '~@fortawesome/fontawesome-free/scss/regular'; 
+
+// Color scheme
+$text:            #47444b;
+$background:      #36b1ac;
+$mainItems:       #e2690e;
+$listItems:       #fdcc0e;
+$backgroundItems: #ffffbd;
+
+html {
+  height:100%;
 }
 
-h4 {
-  margin-bottom: 0rem;
-  font-family: inherit;
-  font-weight: 500;
-  line-height: 1.2;
-  color: inherit;
+body {
+  background-color: $background;
 }
 
 img {
@@ -19,4 +25,8 @@ img {
   border-radius: 50%;
   width: 50px;
   height: 50px;
+}
+
+.list-group-item {
+  background-color: $light;
 }

@@ -8,15 +8,9 @@ export const clearResults = () => { elements.searchResultList.innerHTML = ''; }
 const renderRecipe = recipe => {
   const markup = `
     <li class="list-group-item list-group-item-action mb-3">
-      <a href="#${recipe.recipe_id}">
-        <figure>
-          <img src="${recipe.image_url}" alt="Test">
-        </figure>
-        <div>
-          <h6>${recipe.title}</h4>
-          <p>${recipe.publisher}</p>
-        </div>
-      </a>
+      <img class="shadow"src="${recipe.image_url}" alt="Test">
+      <h6>${recipe.title}</h4>
+      <p>${recipe.publisher}</p>
     </li>
   `;
   elements.searchResultList.insertAdjacentHTML("beforeend", markup);
