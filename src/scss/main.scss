@@ -22,7 +22,13 @@ body {
   background-color: $background;
 }
 
-img {
+h4 {
+  font-size: 1em;
+}
+p {
+  font-size: 0.875em;
+}
+.image-cropper {
   object-fit: cover;
   border-radius: 50%;
   width: 50px;

@@ -7,10 +7,16 @@ export const clearResults = () => { elements.searchResultList.innerHTML = ''; }
 
 const renderRecipe = recipe => {
   const markup = `
-    <li class="list-group-item list-group-item-action mb-3 rounded-0">
-      <img class="shadow"src="${recipe.image_url}" alt="Test">
-      <h6>${recipe.title}</h4>
-      <p>${recipe.publisher}</p>
+    <li class="list-group-item list-group-item-action mb-3 border-0 rounded-0">
+      <div class="row">
+        <div class="col-auto align-self-center">
+          <img class="image-cropper" src="${recipe.image_url}">
+        </div>
+        <div class="col">
+          <h4>${recipe.title}</h4>
+          <p class="m-0">${recipe.publisher}</p>
+        </div>
+      </div>
     </li>
   `;
   elements.searchResultList.insertAdjacentHTML("beforeend", markup);
