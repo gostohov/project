@@ -3,6 +3,7 @@ import '../scss/main.scss';
 import Search from './models/Search';
 import * as searchView from './views/searchView';
 import { elements } from './views/base';
+require('webpack-icons-installer'); 
 
 /**
  * Global state of the app

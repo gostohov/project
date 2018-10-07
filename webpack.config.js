@@ -1,7 +1,7 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: [
@@ -28,13 +28,8 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: './dist'
-            }
-          },
-          'css-loader',
+          MiniCssExtractPlugin.loader,
+          { loader:'css-loader' },
           {
             loader: 'postcss-loader',
             options: {
@@ -45,20 +40,18 @@ module.exports = {
                 ];
               }
             }
-          }, 
-          'sass-loader'
-        ]
+          },
+          { loader: 'sass-loader' }
+        ],
       },
       {
-        test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts/',
-            publicPath: '../fonts/'
-          }
-        }]
+        test: /\.(woff(2)?|ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+          name:'[name].[ext]',
+          outputPath:'assets'
+        }
       }
     ]
   },
