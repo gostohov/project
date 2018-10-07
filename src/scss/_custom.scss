@@ -1,0 +1,8 @@
+.pre-scrollable {
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.pre-scrollable::-webkit-scrollbar {
+  display: none;
+}

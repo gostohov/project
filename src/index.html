@@ -7,22 +7,28 @@
   </head>
   <body>
     <div class="container">
-      <div class="row mt-5">
+      <div class="row mt-3">
         <div class="col">
-          <div class="input-group">
-            <div class="input-group-prepend"></div>
-            <input class="form-control autocomplete rounded-left search_field rounded-0" type="search" placeholder="Find you recipe" aria-label="Search">
-            <div class="input-group-append">
-              <button class="btn btn-warning search rounded-0" type="submit">
-                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-              </button>
+          <form class="search">
+            <div class="input-group">
+              <div class="input-group-prepend"></div>
+              <input class="form-control autocomplete rounded-left search_field rounded-0" type="search" placeholder="Find you recipe" aria-label="Search">
+              <div class="input-group-append">
+                <button class="btn btn-warning rounded-0" type="submit">
+                  <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                </button>
+              </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
+
       <div class="row mt-3">
-        <div class="col mr-auto">
-          <ul class="list-group">
+        <div class="col pr-md-1 pr-lg-1 results pre-scrollable">
+          <!-- <div class="loader text-center bg-warning">
+              <span class="glyphicon glyphicon-refresh gly-spin" aria-hidden="true"></span>
+          </div> -->
+          <div class="list-group">
             <!-- <li class="list-group-item list-group-item-action mb-3 border-0 rounded-0">
               <div class="row">
                 <div class="col-auto align-self-center">
@@ -45,13 +51,14 @@
                 </div>
               </div>
             </li> -->
-          </ul>
+          </div>
         </div>
-        <div class="col-8 d-none d-md-block">
-          <div class="bg-light">
-            <p class="text-center">Choose recipe</p>
+        <div class="col-auto d-none d-md-block recipe" style="max-width: 100vh;">
+          <!-- <div class="bg-light">
             <img class="img-fluid p-3 mx-auto d-block" src="./src/img/2.jpg" alt="Test">
-          </div>          
+          </div>           -->
+          <div class="width-loader"></div>
+
         </div>
         <!-- <div class="col d-md-none">
           <div class="bg-light">

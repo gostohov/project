@@ -1,8 +1,10 @@
 import 'bootstrap';
 import '../scss/main.scss';
 import Search from './models/Search';
+import Recipe from './models/Recipe';
 import * as searchView from './views/searchView';
-import { elements } from './views/base';
+import * as recipeView from './views/recipeView';
+import { elements, renderLoader, clearLoader } from './views/base';
 require('webpack-icons-installer'); 
 
 /**
@@ -25,15 +27,54 @@ const controlSearch = async () => {
     // 3) Prepare UI for results
     searchView.clearInput();
     searchView.clearResults();
-    // 4) Search for recipes
-    await state.search.getResults();
+    renderLoader(elements.searchRes);
+    try {
+      // 4) Search for recipes
+      await state.search.getResults();
 
-    // 5) Render results to UI
-    searchView.renderResults(state.search.result);
+      // 5) Render results to UI
+      clearLoader();
+      searchView.renderResults(state.search.result);
+    } catch (err) {
+      alert('Somethins went wrong :(');
+      clearLoader();
+    }
+    
   }
 }
 
-elements.searchForm.addEventListener('click', e => {
+elements.searchForm.addEventListener('submit', e => {
   e.preventDefault();
   controlSearch();
 });
+
+
+/**
+ * Recipe controller
+ */
+const controlRecipe = async () => {
+  // Get ID from URL
+  const id = window.location.hash.replace('#', '');
+  console.log(id);  
+  if (id) {
+    // Prepare UI for changes
+    recipeView.clearRecipe();
+    renderLoader(elements.recipeLoader);
+    // Create new recipe object
+    state.recipe = new Recipe(id);
+
+    try {
+      // Get recipe data
+      await state.recipe.getRecipe();
+
+      // Render results to UI
+      //clearLoader();
+      recipeView.renderRecipe(state.recipe);
+    } catch (err) {
+      alert('Somethins went wrong :(');
+      //clearLoader();
+    }
+  }
+};
+
+['hashchange', 'load'].forEach(event => window.addEventListener(event, controlRecipe));
